@@ -1,5 +1,5 @@
 import { Given, When, Then } from "@wdio/cucumber-framework";
-import addContactPage from "../pageobjects/addContact.page";
+import addContactPage from "../pageobjects/addContact.page.js";
 
 
 Given(/^I am on the contact list page$/, async () => {
