@@ -11,18 +11,18 @@ Given(/^I am on the (\w+) page$/, async (page) => {
 });
 
 //LOGIN
-When(/^I login with "(.+)" and "(.+)"$/, async (email, password) => {
+When(/^I login with (.+) and (.+)$/, async (email, password) => {
   await LoginPage.login(email, password);
 });
 
-Then(/^I should see a text saying "(.*)"$/, async (message) => {
+Then(/^I should see a text saying (.*)$/, async (message) => {
   if (message == "Contact List") {
     // valid email and password
-    await expect($('//h1[normalize-space()="Contact List"]')).toBeExisting();
-    await expect($('//h1[normalize-space()="Contact List"]')).toHaveTextContaining(message);
+    await expect($("//h1[normalize-space()='Contact List']")).toBeExisting();
+    await expect($("//h1[normalize-space()='Contact List']")).toHaveTextContaining(message);
   } else {
     // invalid email or password
-    await expect($('//span[@id="error"]')).toBeExisting();
-    await expect($('//span[@id="error"]')).toHaveTextContaining(message);
+    await expect($("//span[@id='error']")).toBeExisting();
+    await expect($("//span[@id='error']")).toHaveTextContaining(message);
   }
 });
