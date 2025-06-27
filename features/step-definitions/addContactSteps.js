@@ -13,8 +13,8 @@ When(/^I add a new contact with (.*) and (.*) and (.*) and (.*) and (.*) and (.*
     });
 
 Then(/^I should be redirected to the contact list$/, async () => {
-    const title = await $("//*[contains(text(),'Contact List')]");
-    await title.waitForDisplayed({ timeout: 5000 });
-    await expect(title).toHaveTextContaining("Contact List");
+  const url = await browser.getUrl();
+  console.log('URL actual:', url);
+  await expect(url).toContain('/contactList');
 });
 
