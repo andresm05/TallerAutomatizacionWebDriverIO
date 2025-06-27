@@ -6,6 +6,6 @@ Feature: App Contact Login Feature
     Then I should see a text saying <message>
 
     Examples: 
-      | username          | password | message           |
+      | email          | password | message           |
       | pruebaj@gmail.com | 1234567   | Contact List |
       | erroremail@gmail.com | 1234567   | Incorrect username or password |

@@ -21,7 +21,7 @@ Then(/^I should see a text saying (.*)$/, async (message) => {
     await expect($('//h1[normalize-space()="Contact List"]')).toBeExisting();
     await expect($('//h1[normalize-space()="Contact List"]')).toHaveTextContaining(message);
   } else {
-    // invalid username or password
+    // invalid email or password
     await expect($('//span[@id="error"]')).toBeExisting();
     await expect($('//span[@id="error"]')).toHaveTextContaining(message);
   }
