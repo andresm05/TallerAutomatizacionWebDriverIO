@@ -1,4 +1,4 @@
-# Parabank WebdriverIO Cucumber Javascript
+# AppContact WebdriverIO Cucumber Javascript
 
 ## How to run tests
 

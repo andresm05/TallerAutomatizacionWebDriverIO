@@ -11,11 +11,11 @@ Given(/^I am on the (\w+) page$/, async (page) => {
 });
 
 //LOGIN
-When(/^I login with (\w+) and (.+)$/, async (email, password) => {
+When(/^I login with "(\.+)" and "(.+)"$/, async (email, password) => {
   await LoginPage.login(email, password);
 });
 
-Then(/^I should see a text saying (.*)$/, async (message) => {
+Then(/^I should see a text saying "(.*)"$/, async (message) => {
   if (message == "Contact List") {
     // valid email and password
     await expect($('//h1[normalize-space()="Contact List"]')).toBeExisting();
