@@ -1,13 +1,9 @@
 import { Given, When, Then } from "@wdio/cucumber-framework";
-
 import addContactPage from "../pageobjects/addContact.page";
 
-const pages = {
-    login: addContactPage,
-};
 
-Given(/^I am on the (\w+) page$/, async (page) => {
-    await pages[page].open();
+Given(/^I am on the contact list page$/, async () => {
+    await addContactPage.open();
 });
 
 // ADD CONTACT
