@@ -141,8 +141,7 @@ export const config = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./features/step-definitions/steps.js',
-            './features/step-definitions/addContactSteps.js'
+        require: ['./features/step-definitions/steps.js'
         ],
         // <boolean> show full backtrace for errors
         backtrace: false,
