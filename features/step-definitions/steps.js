@@ -11,7 +11,7 @@ Given(/^I am on the (\w+) page$/, async (page) => {
 });
 
 //LOGIN
-When(/^I login with "(\.+)" and "(.+)"$/, async (email, password) => {
+When(/^I login with "(.+)" and "(.+)"$/, async (email, password) => {
   await LoginPage.login(email, password);
 });
 
