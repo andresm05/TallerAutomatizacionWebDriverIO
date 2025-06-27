@@ -24,6 +24,7 @@ class LoginPage extends Page {
      * e.g. to login using username and password
      */
     async login (email, password) {
+        console.log(await browser.getUrl()); // confirma que estás en la URL correcta
         await this.inputEmail.setValue(email);
         await this.inputPassword.setValue(password);
         await this.btnSubmit.click();
