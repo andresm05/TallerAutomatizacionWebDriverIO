@@ -15,6 +15,7 @@ When(/^I login with (.+) and (.+)$/, async (email, password) => {
 });
 
 Then(/^I should see a text saying (.*)$/, async (message) => {
+  console.log('Mensaje esperado:', message);
   if (message === "Contact List") {
     const contactHeader = $("//h1[normalize-space()='Contact List']");
     await contactHeader.waitForDisplayed({ timeout: 3000 });
