@@ -15,13 +15,13 @@ When(/^I login with (.+) and (.+)$/, async (email, password) => {
 });
 
 Then(/^I should see a text saying (.*)$/, async (message) => {
-  if (message == "Contact List") {
-    // valid email and password
-    await expect($("//h1[normalize-space()='Contact List']")).toBeExisting();
-    await expect($("//h1[normalize-space()='Contact List']")).toHaveTextContaining(message);
+  if (message === "Contact List") {
+    const contactHeader = $("//h1[normalize-space()='Contact List']");
+    await contactHeader.waitForDisplayed({ timeout: 3000 });
+    await expect(contactHeader).toHaveTextContaining(message);
   } else {
-    // invalid email or password
-    await expect($("//span[@id='error']")).toBeExisting();
-    await expect($("//span[@id='error']")).toHaveTextContaining(message);
+    const errorSpan = $("//span[@id='error']");
+    await errorSpan.waitForDisplayed({ timeout: 3000 });
+    await expect(errorSpan).toHaveTextContaining(message);
   }
 });
