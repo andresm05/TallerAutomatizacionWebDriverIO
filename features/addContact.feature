@@ -7,7 +7,7 @@ Feature: AppContact add new contact
     Scenario Outline: As a user, I can add a new contact
         Given I am on the contact list page
         When I add a new contact with <firstName> and <lastName> and <birthDate> and <email> and <phone> and <street1> and <street2> and <city> and <stateProvince> and <postalCode> and <country>
-        Then I should see a text saying <message>
+        Then I should see a text on the add contact saying <message>
 
         Examples:
             | firstName | lastName | birthDate | email              | phone      | street1       | street2 | city     | stateProvince | postalCode | country    | message                |
